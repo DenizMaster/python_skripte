@@ -1,0 +1,21 @@
+Toolchain:
+sudo apt install gcc-arm-none-eabi
+
+Flasher:
+sudo apt install openocd
+
+Serial:
+pip install pyserial
+
+
+Fabric
+
+source anaconda3/bin/activate
+spyder
+
+cat id_rsa.pub 
+>>> c=Connection(host='lora@192.168.1.147')
+
+BUILD_IN_DOCKER=1 BOARD=nucleo-l073rz make all flash term
+
+BOARD=blaa make -C RIOT/tests/drivers/sx1280 all flash term

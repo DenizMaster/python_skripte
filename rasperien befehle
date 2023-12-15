@@ -1,0 +1,15 @@
+sudo date --set ' 2023-09-29 13:21:00'
+sudo apt-get update
+sudo apt-get upgrade
+ifconfig
+
+cd .ssh/
+touch authorized_keys
+ls -lt
+chmod 600 authorized_keys
+cat authorized_keys
+vi authorized_keys
+
+
+
+strg+alt+t

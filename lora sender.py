@@ -19,7 +19,7 @@ time.sleep(1)
 print("sleep end")
 #ser.write(b'sx1280 rx start')
 time.sleep(0.5)
-
+"""
 for i in range(100):
     i_str=str(i)
     i_byte=i_str.encode()
@@ -27,11 +27,22 @@ for i in range(100):
     print(b'test '+i_byte)
     print(b'bla '+str(i).encode())
     ausgabe=ser.write(b'sx1280 tx '+str(i).encode()+b'\n')
+
     print(ausgabe)
     #ser.write(b'sx1280 tx hallo')
     time.sleep(0.5)
-
+"""
+ausgabe=ser.write(b'sx1280 tx_flooding\n')
+print(ausgabe)
 #outpurt=ser.write(b'sx1280 tx hallo')
 #print(outpurt)
+"""
+1 1bypte
+2
+3
+10 2
+11
+100 3
+"""
 time.sleep(5)
 ser.close()
