@@ -32,7 +32,7 @@ for i in range(100):
     #ser.write(b'sx1280 tx hallo')
     time.sleep(0.5)
 """
-ausgabe=ser.write(b'sx1280 tx_flooding\n')
+ausgabe=ser.write(b'sx1280 tx_flooding 1000\n')
 print(ausgabe)
 #outpurt=ser.write(b'sx1280 tx hallo')
 #print(outpurt)
