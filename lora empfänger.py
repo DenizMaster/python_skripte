@@ -21,12 +21,13 @@ import csv
 
 ser = serial.Serial('/dev/ttyACM0', baudrate=115200)
 
-time_now_dateiname = dt.datetime.now()
-time_now_dateiname_str=time_now_dateiname.strftime("%Y-%m-%d %H:%M:%S")
+
+time_now_dateiname_str=time.strftime("%d-%m-%Y_%X")
 counter=0
+kopf_der_spalten="kopf der spalten"#TODO muss noch angepasst werden
 dateiname = '~/Dokumente/CSV_datei/messwerte '+time_now_dateiname_str+'.csv'
-datenbank = open(dateiname,'w')
-csv.writer(datenbank).writerow('')
+datenbank = open(dateiname,mode='w',newline='\n')
+csv.writer(datenbank).writerow(kopf_der_spalten)
 
 time.sleep(0.1)
 input_1=ser.write(b'reboot\n')
@@ -41,9 +42,11 @@ while counter<10:
     print("while oben")
     #output= ser.read(size=10)
     #output= ser.read_until(expected=b']',size=18)
-    time_now_timestamp=dt.datetime.now()
+    time_now_timestamp=time.strftime("%X_%x")#dt.datetime.now()
     output= ser.readline()
-    output_list=[output,time_now_timestamp]
+    output=output.split("X")
+    output_list=output.append(time_now_timestamp)
+    csv.writer(datenbank).writerow(output_list)
     print(output)
     if counter==10:
         print("if in while")
