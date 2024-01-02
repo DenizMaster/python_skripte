@@ -6,7 +6,7 @@ Created on Tue Nov 28 12:59:14 2023
 @author: lora
 """
 
-import fabric
+from fabric import Connection
 #import serial
 import os
 HOSTS=['10.42.0.1','10.42.0.2']
@@ -14,8 +14,10 @@ HOSTS=['10.42.0.1','10.42.0.2']
 test_cmd = "ping " + HOSTS[0]
 
 
-c1=fabric.Connection(HOSTS[0])
-c1.run("cd ~/pythonscript/python_skripte")
-c1.run("python3 'lora\ empfänger.py'")
+c1=Connection(HOSTS[0])
+c1.run("cd ~/Documents/")
+c1.run("~/Documents/ > testdatei_123.csv")
+os.system("scp lora@10.42.0.1:~/Documents/testdatei_123.csv ~/Dokumente")
+#c1.run("python3 'lora\ empfänger.py'")
 #output=c1.run("ip addr\n")
 #print(output)
