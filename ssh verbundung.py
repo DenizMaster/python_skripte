@@ -7,7 +7,7 @@ Created on Tue Nov 28 12:59:14 2023
 """
 
 import fabric
-import serial
+#import serial
 import os
 HOSTS=['10.42.0.1','10.42.0.2']
 
