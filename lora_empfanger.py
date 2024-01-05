@@ -27,7 +27,7 @@ time_now_dateiname_str=time.strftime("%d-%m-%Y_%X")
 counter=0
 kopf_der_spalten=["Index","RSSI","SNR"]
 #dateiname = '~/Dokumente/CSV_datei/testdaten '+time_now_dateiname_str+'.csv'
-dateiname = '~/testdaten '+time_now_dateiname_str+'.csv'
+dateiname = 'testdaten_'+time_now_dateiname_str+'.csv'
 
 os.system("> "+dateiname)
 datenbank = open(dateiname,mode='w',newline='\n')
