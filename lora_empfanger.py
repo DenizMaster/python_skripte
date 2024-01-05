@@ -48,7 +48,7 @@ while counter<100:
     time_now_timestamp=time.strftime("%X_%x")#dt.datetime.now()
     output= str(ser.readline())
     output=output.replace("b","")
-    output[0]=output[0].replace("'","")
+    output=output.replace("'","")
     output=output.replace(output[0],int(output[0]))
     output=output.replace("Data reception started\\n","")
     output=output.split("X")
