@@ -46,12 +46,13 @@ while counter<10:
     #output= ser.read(size=10)
     #output= ser.read_until(expected=b']',size=18)
     time_now_timestamp=time.strftime("%X_%x")#dt.datetime.now()
-    output= ser.readline()
-    #output=output.split("X")
-    #output_list=output.append(time_now_timestamp)
+    output= str(ser.readline())
+    output=output.split("X")
+    output_list=output.append(time_now_timestamp)
     #csv.writer(datenbank).writerow(output_list)
     print(output)
     print(type(output))
+    print(output_list)
     if counter==10:
         print("if in while")
         counter=0
