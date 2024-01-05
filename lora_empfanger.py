@@ -41,19 +41,21 @@ print("sleep end")
 time.sleep(0.5)
 ser.write(b'sx1280 rx start\n')
 time.sleep(0.5)
-while counter<10:
+while counter<100:
     print("while oben")
     #output= ser.read(size=10)
     #output= ser.read_until(expected=b']',size=18)
     time_now_timestamp=time.strftime("%X_%x")#dt.datetime.now()
     output= str(ser.readline())
+    output=output.replace("b","")
+    output=output.replace("Data reception started\\n","")
     output=output.split("X")
-    output_list=output.append(time_now_timestamp)
+    output.append(time_now_timestamp)
     #csv.writer(datenbank).writerow(output_list)
     print(output)
-    print(type(output))
-    print(output_list)
-    if counter==10:
+    #print(type(output))
+    
+    if counter==100:
         print("if in while")
         counter=0
     
