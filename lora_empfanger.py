@@ -50,10 +50,11 @@ while counter<100:
     output=output.replace("b","")
     output=output.replace("'","")
     #print(output[0])
-    output[0]=ord(output[0])
+    
     #output=output.replace(output[0],int(output[0]))
     output=output.replace("Data reception started\\n","")
     output=output.split("X")
+    output[0]=ord(output[0])
     output.append(time_now_timestamp)
     #csv.writer(datenbank).writerow(output_list)
     print(output)
