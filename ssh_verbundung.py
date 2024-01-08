@@ -16,11 +16,15 @@ from threading import Thread
 
 HOSTS=['10.42.0.1','10.42.0.78']
 c1=fabric.Connection(HOSTS[0])
+c2=fabric.Connection(HOSTS[0])
 
+def ssh_python_start():
+    c2.run("python3 ~/pythonscript/python_skripte/lora_empfanger.py")
+    
 
 def ssh_verbindung():
       
-    c1.run("python3 ~/pythonscript/python_skripte/lora_empfanger.py")
+    #c1.run("python3 ~/pythonscript/python_skripte/lora_empfanger.py")
     messdaten_liste=[]
     while True:
         recl=c1.run("ls ~/pythonscript/python_skripte")
@@ -31,7 +35,8 @@ def ssh_verbindung():
                     if j.startswith("testdaten"):
                         messdaten_liste.append(j)
                 break
-    print(messdaten_liste)
+            
+    #print(messdaten_liste)
     for i in messdaten_liste:
         os.system("scp lora@10.42.0.1:~/pythonscript/python_skripte/"+i+" lora@10.42.0.78 ~/Dokumente")
 
