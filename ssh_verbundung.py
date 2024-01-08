@@ -17,7 +17,7 @@ def ssh_verbindung():
     HOSTS=['10.42.0.1','10.42.0.78']
     test_cmd = "ping " + HOSTS[1]
     c1=fabric.Connection(HOSTS[0])
-    c1.run("python3 lora_empfanger.py")
+    c1.run("python3 ~/pythonscript/python_skripte/lora_empfanger.py")
     messdaten_liste=[]
     while True:
         recl=c1.run("ls ~/pythonscript/python_skripte")
