@@ -12,11 +12,14 @@ import time
 import os
 from threading import Thread
 
-def ssh_verbindung():
 
-    HOSTS=['10.42.0.1','10.42.0.78']
-    test_cmd = "ping " + HOSTS[1]
-    c1=fabric.Connection(HOSTS[0])
+
+HOSTS=['10.42.0.1','10.42.0.78']
+c1=fabric.Connection(HOSTS[0])
+
+
+def ssh_verbindung():
+      
     c1.run("python3 ~/pythonscript/python_skripte/lora_empfanger.py")
     messdaten_liste=[]
     while True:
@@ -30,7 +33,7 @@ def ssh_verbindung():
                 break
     print(messdaten_liste)
     for i in messdaten_liste:
-        os.system("scp lora@10.42.0.1:~/"+i+" ~/Dokumente")
+        os.system("scp lora@10.42.0.1:~/pythonscript/python_skripte/"+i+" lora@10.42.0.78 ~/Dokumente")
 
 #recl=c1.run("pwd")
 #print(recl)
