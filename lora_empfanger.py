@@ -27,8 +27,12 @@ time_now_dateiname_str=time.strftime("%d-%m-%Y_%X")
 counter=0
 kopf_der_spalten=["Index","RSSI","SNR"]
 #dateiname = '~/Dokumente/CSV_datei/testdaten '+time_now_dateiname_str+'.csv'
-dateiname = 'testdaten_'+time_now_dateiname_str+'.csv'
-
+dateiname = '~/pythonscript/python_skripte/testdaten_'+time_now_dateiname_str+'.csv'
+dateiname_beenden = '~/pythonscript/python_skripte/ende.txt'
+try:
+    os.system("rm "+dateiname_beenden)
+finally:
+    print("gibts noch nciht")
 os.system("> "+dateiname)
 datenbank = open(dateiname,mode='w',newline='\n')
 csv.writer(datenbank).writerow(kopf_der_spalten)
@@ -41,7 +45,7 @@ print("sleep end")
 time.sleep(0.5)
 ser.write(b'sx1280 rx start\n')
 time.sleep(0.5)
-while counter<100:
+while 1:#counter<100:
     print("while oben")
     #output= ser.read(size=10)
     #output= ser.read_until(expected=b']',size=18)
@@ -55,16 +59,16 @@ while counter<100:
     output=output.replace("Data reception started\\n","")
     output=output.split("X")
     print(output[0])
+    output_old=output
     output.append(time_now_timestamp)
-    #csv.writer(datenbank).writerow(output_list)
+    csv.writer(datenbank).writerow(output)
     print(output)
     #print(type(output))
     
-    if counter==100:
-        print("if in while")
-        counter=0
+    if output[0:3]==output_old:
+        break
     
-    counter=counter+1
+os.system("> "+dateiname_beenden)
     
     
 

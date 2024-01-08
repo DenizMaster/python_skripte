@@ -24,25 +24,31 @@ c1=fabric.Connection(HOSTS[0])
 #recl=c1.run("pwd")
 #print(recl)
 #recl=c1.run("> testdatei_12345.csv")
-while 1:
-    recl=c1.run("ls")
-    #print(recl)
-    daten=str(recl).split("\n")
-    print(daten)
-    messdaten_liste=[]
-    for i in daten:
-        if i.startswith("ende"):
-            for j in daten:
-                if j.startswith("testdaten"):
-                    messdaten_liste.append(j)
-            break
+
+
+#c1.run("cd ~/Documents")
+c1.run("> ~/Documents/testdatei_123.csv")
+recl=c1.run("ls ~/Documents")
+print(recl)
+#recl=c1.run("pwd")
+#print(recl)
+#c1.run("> testdatei_123.csv")
+#recl=c1.run("ls")
+#daten=str(recl).split("\n")
+"""
+print(daten)
+messdaten_liste=[]
+for i in daten:
+    if i.startswith("testdatei"):
+        messdaten_liste.append(i)
 
 print(messdaten_liste)
 #recl=c1.run("pwd")
 #print(recl)
-#c1.run("-C ~/Documents  > testdatei_123.csv")
+
 for i in messdaten_liste:
-    os.system("scp lora@10.42.0.1:~/"+i+" ~/Dokumente")
+    os.system("scp lora@10.42.0.1:~/Documents/"+i+" ~/Dokumente")
 #c1.run("python3 'lora\ empfänger.py'")
 #output=c1.run("ip addr\n")
 #print(output)
+"""
