@@ -56,8 +56,11 @@ while 1:#counter<100:
     #output= ser.read_until(expected=b']',size=18)
     #time_now_timestamp=time.strftime("%X_%x")#dt.datetime.now()
     output= str(ser.readline())
-    
+    print(output)
     output=output.replace("Data","")
+    output=output.replace("b","")
+    output=output.replace("'","")
+    
     output=output.split(" ")
     try:
         del output[9]
