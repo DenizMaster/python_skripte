@@ -60,11 +60,11 @@ while 1:#counter<100:
     output=output.replace("Data","")
     output=output.split(" ")
     try:
-        del output[2]
-        del output[3]
+        del output[9]
+        del output[8]
+        del output[6]
         del output[4]
-        del output[5]
-        del output[5]
+        del output[2]
     except IndexError:
         print("ignoring the first run")
     #output=output.replace("X","")
