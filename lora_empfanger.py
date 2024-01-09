@@ -29,7 +29,7 @@ kopf_der_spalten=["Index","RSSI","SNR"]
 #dateiname = '~/Dokumente/CSV_datei/testdaten '+time_now_dateiname_str+'.csv'
 dateiname = '~/pythonscript/python_skripte/testdaten_'+time_now_dateiname_str+'.csv'
 dateiname_beenden = '~/pythonscript/python_skripte/ende.txt'
-dateiname2 = "testdaten_test"
+dateiname2 = "testdaten_test.csv"
 try:
     os.system("rm "+dateiname_beenden)
 finally:
