@@ -37,7 +37,7 @@ finally:
 #os.system("> "+dateiname2)
 time.sleep(1)
 open(dateiname2,mode='x',newline='\n')
-datenbank = open(dateiname2,mode='w',newline='\n')
+datenbank = open(dateiname2,mode='a',newline='\n')
 csv.writer(datenbank).writerow(kopf_der_spalten)
 
 time.sleep(0.1)
