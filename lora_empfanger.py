@@ -62,7 +62,8 @@ while 1:#counter<100:
     output=output.replace("'","")
     
     output=output.split(" ")
-    print(output+ "nach split")
+    print(output)
+    print("nach split")
     try:
         del output[9]
 
