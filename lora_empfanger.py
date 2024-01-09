@@ -29,14 +29,15 @@ kopf_der_spalten=["Index","RSSI","SNR"]
 #dateiname = '~/Dokumente/CSV_datei/testdaten '+time_now_dateiname_str+'.csv'
 dateiname = '~/pythonscript/python_skripte/testdaten_'+time_now_dateiname_str+'.csv'
 dateiname_beenden = '~/pythonscript/python_skripte/ende.txt'
+dateiname2 = "testdaten_test"
 try:
     os.system("rm "+dateiname_beenden)
 finally:
     print("gibts noch nciht")
-os.system("> "+dateiname)
+#os.system("> "+dateiname2)
 time.sleep(1)
-open(dateiname,mode='x',newline='\n')
-datenbank = open(dateiname,mode='w',newline='\n')
+open(dateiname2,mode='x',newline='\n')
+datenbank = open(dateiname2,mode='w',newline='\n')
 csv.writer(datenbank).writerow(kopf_der_spalten)
 
 time.sleep(0.1)
