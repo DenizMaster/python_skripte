@@ -48,6 +48,7 @@ print("sleep end")
 time.sleep(0.5)
 ser.write(b'sx1280 rx start\n')
 time.sleep(0.5)
+output_old=1
 output=0
 while 1:#counter<100:
     print("while oben")
