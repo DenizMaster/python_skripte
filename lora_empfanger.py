@@ -34,7 +34,7 @@ try:
 finally:
     print("gibts noch nciht")
 os.system("> "+dateiname)
-time.sleep(0.1)
+time.sleep(1)
 datenbank = open(dateiname,mode='w',newline='\n')
 csv.writer(datenbank).writerow(kopf_der_spalten)
 
