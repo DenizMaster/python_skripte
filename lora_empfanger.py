@@ -62,6 +62,19 @@ while 1:#counter<100:
     output=output.replace("'","")
     
     output=output.split(" ")
+    print(output+ "nach split")
+    try:
+        del output[9]
+
+    except IndexError:
+        print("index 9 nicht da")
+    
+    try:
+        del output[8]
+
+    except IndexError:
+        print("index 8 nicht da")
+    """
     try:
         del output[9]
         del output[8]
@@ -70,6 +83,22 @@ while 1:#counter<100:
         del output[2]
     except IndexError:
         print("ignoring the first run")
+        """
+    try:
+        del output[6]
+
+    except IndexError:
+        print("index 6 nicht da")
+    try:
+        del output[4]
+
+    except IndexError:
+        print("index 4 nicht da")
+    try:
+        del output[2]
+
+    except IndexError:
+        print("index 2 nicht da")
     #output=output.replace("X","")
     #output=output.replace("'","")
     #print(output[0])
