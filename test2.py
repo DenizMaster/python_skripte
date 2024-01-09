@@ -1,3 +1,6 @@
+"""
+wird von "test.py" per ssh aufgerufen
+"""
 #import csv
 import os
 # Daten zum Schreiben in die CSV-Datei

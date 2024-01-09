@@ -1,4 +1,7 @@
-
+"""
+ruft über ssh auf dem zielrechner "test2.py" auf
+um zu testen ob man per ssh den befehl zum start einer pythondatei geben kann 
+"""
 import fabric
 import serial
 import time
