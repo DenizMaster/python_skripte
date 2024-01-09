@@ -54,7 +54,7 @@ def lora_sender():
     #print("sleep end")
     #ser.write(b'sx1280 rx start')
     #time.sleep(0.5)
-    ausgabe=ser.write(b'sx1280 tx_flooding 1000\n')
+    ausgabe=ser.write(b'sx1280 tx_flooding 500\n')
     #print(ausgabe)
     time.sleep(5)
     ser.close()
