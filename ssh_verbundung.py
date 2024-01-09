@@ -59,10 +59,10 @@ def lora_sender():
     time.sleep(5)
     ser.close()
 
+empfanger_thread=Thread(target=ssh_python_start)
 ssh_thread=Thread(target=ssh_verbindung)
 sending_thread=Thread(target=lora_sender)
-empfanger_thread=Thread(target=ssh_python_start)
 
+empfanger_thread.start()
 ssh_thread.start()
-#sending_thread.start()
-#empfanger_thread.start()
+sending_thread.start()
