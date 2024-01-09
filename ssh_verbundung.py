@@ -35,8 +35,7 @@ def ssh_verbindung():
                     if j.startswith("testdaten"):
                         messdaten_liste.append(j)
                 break
-            
-    #print(messdaten_liste)
+                #print(messdaten_liste)
     for i in messdaten_liste:
         os.system("scp lora@10.42.0.1:~/pythonscript/python_skripte/"+i+" lora@10.42.0.78 ~/Dokumente")
 
