@@ -50,7 +50,7 @@ ser.write(b'sx1280 rx start\n')
 time.sleep(0.5)
 output_old=[0,1]
 output=[0,0]
-while 1:#counter<100:
+for k in range(100):#counter<100:
     print("while oben")
     #output= ser.read(size=10)
     #output= ser.read_until(expected=b']',size=18)
@@ -110,9 +110,9 @@ while 1:#counter<100:
     print(output)
     #print(type(output))
     
-    if output[1]==output_old[1]:
-        break
-    output_old=output
+    #if output[1]==output_old[1]:
+     #   break
+    #output_old=output
 os.system("> "+dateiname_beenden)
     
     
