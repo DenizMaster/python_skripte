@@ -54,7 +54,7 @@ for k in range(100):#counter<100:
     print("while oben")
     #output= ser.read(size=10)
     #output= ser.read_until(expected=b']',size=18)
-    #time_now_timestamp=time.strftime("%X_%x")#dt.datetime.now()
+    time_now_timestamp=time.strftime("%X_%x")#dt.datetime.now()
     output= str(ser.readline())
     print(output)
     output=output.replace("Data","")
@@ -105,7 +105,7 @@ for k in range(100):#counter<100:
     #output=output[0:1,3,5,7]
     #print(output[0])
     
-    #output.append(time_now_timestamp)
+    output.append(time_now_timestamp)
     csv.writer(datenbank).writerow(output)
     print(output)
     #print(type(output))
