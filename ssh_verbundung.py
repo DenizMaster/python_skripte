@@ -19,7 +19,7 @@ c1=fabric.Connection(HOSTS[0])
 c2=fabric.Connection(HOSTS[0])
 
 def ssh_python_start():
-    c2.run("python3 ~/pythonscript/python_skripte/lora_empfanger.py")
+    c2.run("python3 ~/pythonscript/python_skripte/lora_empfanger.py &")
     
 
 def ssh_verbindung():
@@ -64,5 +64,5 @@ ssh_thread=Thread(target=ssh_verbindung)
 sending_thread=Thread(target=lora_sender)
 
 empfanger_thread.start()
-ssh_thread.start()
+#ssh_thread.start()
 sending_thread.start()
