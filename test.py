@@ -21,3 +21,25 @@ c1.run("python3 ~/pythonscript/python_skripte/test2.py")
     #while True:
      #   recl=c1.run("ls ~/pythonscript/python_skripte")
       #  daten=str(recl).split("\n")
+
+
+CR=[1,2,3,4]
+bw=[5,6,7,8,9]
+
+
+for i in CR:
+    for j in bw:
+        print (i+j)
+
+cp = [(sf, bw, cr) for sf in SF for bw in BW for cr in CR]
+[(0,0,1),
+ (0,0,2)]
+
+for (sf, bw, cf) in cp:
+    print(sf)
+    print(bw)
+
+for tpl in cp:
+    sf = tpl[0]
+    print(sf)
+    print(bw)

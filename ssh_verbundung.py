@@ -12,8 +12,9 @@ import time
 import os
 import re
 
+TTY="/dev/ttyACM0"
 
-
+#TTY="/tmp/test"
 
 HOSTS=['10.42.0.1','10.42.0.78']
 c1=fabric.Connection(HOSTS[0])
@@ -22,15 +23,17 @@ c2=fabric.Connection(HOSTS[0])
 spreading_faktors=["1","2","3","4"]
 BW=["200","400","800"]
 #c1.run("rm -f ~/Dokumente/CSV_datei/endesignal.txt")
+c1.put("/home/lora/Dokumente/lora_empfanger.py", "/home/lora/pythonscript/python_skripte/lora_empfanger.py")
 
-#c1.run("python3 ~/pythonscript/python_skripte/lora_empfanger.py &")
+c1.run('rm -f /home/lora/Documents/CSV_datei/endesingnal.txt')
+c1.run('nohup python3 -u /home/lora/pythonscript/python_skripte/lora_empfanger.py 1 2 3 >& /dev/null < /dev/null&')
 
 print("geht weiter")
-ser = serial.Serial('/dev/ttyACM0', baudrate=115200)
+ser = serial.Serial(TTY, baudrate=115200)
 time.sleep(0.1)
 input_1=ser.write(b'reboot\n')
 
-time.sleep(1)
+time.sleep(5)
 
 ausgabe=ser.write(b'sx1280 tx_flooding 50\n')
 print(ausgabe)
@@ -43,8 +46,9 @@ while True:
     if re.search(r"the End",output):
         time_now_dateiname_str=time.strftime("%d-%m-%Y_%X")
         print("ende erreicht")
-        #c1.get("~/Documents/CSV_datei/testdaten.csv","~/Dokumente/CSV_datei/testdaten_"+time_now_dateiname_str+".csv") #TODO: bei automatisierung auch unterschiedliche parameter einfügen
-        #c1.run("touch endesingnal.txt")
+        c1.run("touch /home/lora/Documents/CSV_datei/endesingnal.txt")
+        time.sleep(2)
+        c1.get("/home/lora/Documents/CSV_datei/testdaten.dat","/home/lora/Dokumente/CSV_datei/testdaten_"+time_now_dateiname_str+".dat") #TODO: bei automatisierung auch unterschiedliche parameter einfügen
         break
 #time.sleep(5)
     # regex

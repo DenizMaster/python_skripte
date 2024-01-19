@@ -1,0 +1,44 @@
+07:11:40_01/16/24;51 X -44 X 0Data reception started
+07:11:40_01/16/24;reboot
+07:11:40_01/16/24;main(): This is RIOT! (Version: 2023.01)
+07:11:40_01/16/24;Unexpected netdev event received: 8
+07:11:40_01/16/24;Initialization successful - starting the shell now
+07:11:40_01/16/24;> sx1280 rx start
+07:11:40_01/16/24;Listen mode started
+07:11:40_01/16/24;> Data reception started
+07:11:40_01/16/24;15 X -41 X 0Data reception started
+07:11:40_01/16/24;16 X -41 X -1Data reception started
+07:11:40_01/16/24;17 X -41 X 0Data reception started
+07:11:40_01/16/24;18 X -40 X -1Data reception started
+07:11:40_01/16/24;19 X -40 X 0Data reception started
+07:11:40_01/16/24;20 X -41 X 0Data reception started
+07:11:40_01/16/24;21 X -41 X 0Data reception started
+07:11:40_01/16/24;22 X -40 X 0Data reception started
+07:11:40_01/16/24;23 X -41 X 0Data reception started
+07:11:40_01/16/24;24 X -41 X 0Data reception started
+07:11:41_01/16/24;25 X -40 X 0Data reception started
+07:11:41_01/16/24;26 X -40 X 0Data reception started
+07:11:41_01/16/24;27 X -41 X 0Data reception started
+07:11:41_01/16/24;28 X -41 X 0Data reception started
+07:11:41_01/16/24;29 X -41 X 0Data reception started
+07:11:41_01/16/24;30 X -41 X 0Data reception started
+07:11:41_01/16/24;31 X -41 X 0Data reception started
+07:11:41_01/16/24;32 X -40 X -1Data reception started
+07:11:42_01/16/24;33 X -40 X 0Data reception started
+07:11:42_01/16/24;34 X -41 X 0Data reception started
+07:11:42_01/16/24;35 X -41 X 0Data reception started
+07:11:42_01/16/24;36 X -40 X -1Data reception started
+07:11:42_01/16/24;37 X -41 X 0Data reception started
+07:11:42_01/16/24;38 X -40 X 0Data reception started
+07:11:42_01/16/24;39 X -41 X 0Data reception started
+07:11:42_01/16/24;40 X -40 X 0Data reception started
+07:11:43_01/16/24;41 X -40 X -1Data reception started
+07:11:43_01/16/24;42 X -40 X 0Data reception started
+07:11:43_01/16/24;43 X -40 X 0Data reception started
+07:11:43_01/16/24;44 X -40 X 0Data reception started
+07:11:43_01/16/24;45 X -40 X -1Data reception started
+07:11:43_01/16/24;46 X -40 X -1Data reception started
+07:11:43_01/16/24;47 X -40 X -1Data reception started
+07:11:43_01/16/24;48 X -40 X 0Data reception started
+07:11:44_01/16/24;49 X -40 X 0Data reception started
+07:11:44_01/16/24;50 X -40 X 0Data reception started
