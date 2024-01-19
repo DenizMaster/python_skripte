@@ -19,7 +19,17 @@ import time
 import datetime as dt
 import csv
 import os
+import argparse
 
+parser = argparse.ArgumentParser(
+                    prog='ProgramName',
+                    description='What the program does',
+                    epilog='Text at the bottom of help')
+parser.add_argument('SF')
+parser.add_argument('BW')
+parser.add_argument('CR')
+args=parser.parse_args()
+print(args.SF)
 ser = serial.Serial('/dev/ttyACM0', baudrate=115200)
 
 
@@ -38,7 +48,7 @@ dateiname2 = "testdaten_test.csv"
 time.sleep(1)
 open(dateiname,mode='x',newline='\n')
 datenbank = open(dateiname,mode='a',newline='\n')
-csv.writer(datenbank).writerow(kopf_der_spalten)
+#csv.writer(datenbank).writerow(kopf_der_spalten)
 
 time.sleep(0.1)
 input_1=ser.write(b'reboot\n')
@@ -46,7 +56,7 @@ print("sleep start")
 time.sleep(1)
 print("sleep end")
 time.sleep(0.5)
-ser.write(b'sx1280 rx start\n')
+ser.write(b'sx1280 rx start'+b'bla\n')
 time.sleep(0.5)
 output_old=[0,1]
 output=[0,0]
@@ -56,55 +66,8 @@ for k in range(100):#counter<100:
     #output= ser.read_until(expected=b']',size=18)
     time_now_timestamp=time.strftime("%X_%x")#dt.datetime.now()
     output= str(ser.readline())
-    print(output)
-    output=output.replace("Data","")
-    output=output.replace("b","")
-    output=output.replace("'","")
-    
-    output=output.split(" ")
-    print(output)
-    print("nach split")
-
-    """
-    try:
-        del output[9]
-        del output[8]
-        del output[6]
-        del output[4]
-        del output[2]
-    except IndexError:
-        print("ignoring the first run")
-        """
-    try:
-        del output[6]
-
-    except IndexError:
-        print("index 6 nicht da")
-    try:
-        del output[5]
-
-    except IndexError:
-        print("index 5 nicht da")
-    try:
-        del output[3]
-
-    except IndexError:
-        print("index 3 nicht da")
-    try:
-        del output[1]
-
-    except IndexError:
-        print("index 1 nicht da")
-    #output=output.replace("X","")
-    #output=output.replace("'","")
-    #print(output[0])
-    
-    #output=output.replace(output[0],int(output[0]))
-    #output=output.replace("Data reception started\\n","")
-    
-    #output=output[0:1,3,5,7]
-    #print(output[0])
-    
+ 
+   
     output.append(time_now_timestamp)
     csv.writer(datenbank).writerow(output)
     print(output)

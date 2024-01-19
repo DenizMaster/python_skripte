@@ -21,8 +21,9 @@ c2=fabric.Connection(HOSTS[0])
 
 spreading_faktors=["1","2","3","4"]
 BW=["200","400","800"]
+#c1.run("rm -f ~/Dokumente/CSV_datei/endesignal.txt")
 
-c1.run("python3 ~/pythonscript/python_skripte/lora_empfanger.py &")
+#c1.run("python3 ~/pythonscript/python_skripte/lora_empfanger.py &")
 
 print("geht weiter")
 ser = serial.Serial('/dev/ttyACM0', baudrate=115200)
@@ -42,7 +43,8 @@ while True:
     if re.search(r"the End",output):
         time_now_dateiname_str=time.strftime("%d-%m-%Y_%X")
         print("ende erreicht")
-        c1.get("~/Documents/CSV_datei/testdaten.csv","~/Dokumente/CSV_datei/testdaten_"+time_now_dateiname_str+".csv") #TODO: bei automatisierung auch unterschiedliche parameter einfügen
+        #c1.get("~/Documents/CSV_datei/testdaten.csv","~/Dokumente/CSV_datei/testdaten_"+time_now_dateiname_str+".csv") #TODO: bei automatisierung auch unterschiedliche parameter einfügen
+        #c1.run("touch endesingnal.txt")
         break
 #time.sleep(5)
     # regex
