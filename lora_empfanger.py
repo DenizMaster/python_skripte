@@ -46,8 +46,8 @@ dateiname2 = "testdaten_test.csv"
 #    print("gibts noch nciht")
 #os.system("> "+dateiname2)
 time.sleep(1)
-open(dateiname,mode='x',newline='\n')
-datenbank = open(dateiname,mode='a',newline='\n')
+#open(dateiname,mode='w',newline='\n')
+datenbank = open(dateiname,mode='w',newline='\n')
 #csv.writer(datenbank).writerow(kopf_der_spalten)
 
 time.sleep(0.1)
