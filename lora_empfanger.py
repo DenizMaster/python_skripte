@@ -27,13 +27,13 @@ time_now_dateiname_str=time.strftime("%d-%m-%Y_%X")
 counter=0
 kopf_der_spalten=["Index","RSSI","SNR"]
 #dateiname = '~/Dokumente/CSV_datei/testdaten '+time_now_dateiname_str+'.csv'
-dateiname = "testdaten_"+time_now_dateiname_str+".csv"
-dateiname_beenden = '~/pythonscript/python_skripte/ende.txt'
+dateiname = "~/Dokumente/CSV_datei/testdaten.csv"
+#dateiname_beenden = '~/pythonscript/python_skripte/ende.txt'
 dateiname2 = "testdaten_test.csv"
-try:
-    os.system("rm "+dateiname_beenden)
-finally:
-    print("gibts noch nciht")
+#try:
+#    os.system("rm "+dateiname_beenden)
+#finally:
+#    print("gibts noch nciht")
 #os.system("> "+dateiname2)
 time.sleep(1)
 open(dateiname,mode='x',newline='\n')
@@ -113,7 +113,7 @@ for k in range(100):#counter<100:
     #if output[1]==output_old[1]:
      #   break
     #output_old=output
-os.system("> "+dateiname_beenden)
+#os.system("> "+dateiname_beenden)
     
     
 
