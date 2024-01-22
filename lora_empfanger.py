@@ -16,20 +16,21 @@ empfänger skript:
 
 import serial
 import time
-import datetime as dt
-import csv
+#import datetime as dt
+#import csv
 import os
 import argparse
 
 parser = argparse.ArgumentParser(
                     prog='ProgramName',
                     description='What the program does',
-                    epilog='Text at the bottom of help')
+                    epilo='Text at the bottom of help')
 parser.add_argument('SF')
 parser.add_argument('BW')
 parser.add_argument('CR')
+parser.add_argument('FREQ')
 args=parser.parse_args()
-print(args.SF)
+#print(args.SF)
 ser = serial.Serial('/dev/ttyACM0', baudrate=115200,timeout=1)
 
 
@@ -51,6 +52,14 @@ print("sleep start")
 time.sleep(1)
 print("sleep end")
 time.sleep(0.5)
+ser.write(b'sx1280 set sf '+args.SF.encode()+b'\n')
+time.sleep(0.5)
+ser.write(b'sx1280 set bw '+args.BW.encode()+b'\n')
+time.sleep(0.5)
+ser.write(b'sx1280 set cr '+args.CR.encode()+b'\n')
+time.sleep(0.5)
+ser.write(b'sx1280 set freq '+args.FREQ.encode()+b'\n')
+time.sleep(0.5)
 ser.write(b'sx1280 rx start\n')
 time.sleep(0.5)
 
@@ -61,10 +70,10 @@ while True:
 
     time_now_timestamp=time.strftime("%X_%x")#dt.datetime.now()
     outputt=ser.readline().decode("ASCII").rstrip()
-    print("T", outputt)
+    #print("T", outputt)
     if outputt == "":
         continue
-    output= [outputt,time_now_timestamp]
+    #output= [outputt,time_now_timestamp]
 
     zeile=f"{time_now_timestamp};{outputt}"
     #csv.writer(datenbank).writerow(output)
