@@ -42,12 +42,22 @@ SF=["a","b","c"]
   #  print(cr)
    # print("punkt")
 #a=b'hallo'
-b=" test"
+#b=" test"
 #b1=b.encode()
-print(b'hallo'+b.encode())
-for c in BW:
-    print(c.encode())
+#print(b'hallo'+b.encode())
+#for c in BW:
+    #print(c.encode())
 #for tpl in cp:
  #   sf = tpl[0]
  #   print(sf)
  #  print(bw)
+
+for i in BW:
+    print(i)
+    j=0
+    while True:
+        print(j)
+        print(i)
+        if j>=5:
+            break
+        j=j+1

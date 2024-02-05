@@ -29,6 +29,7 @@ def erstelltest(c):
 @task(hosts=HOSTS)
 def loschtest(c):
     c.run('rm -f /home/lora/Documents/CSV_datei/endesingnal.txt')
+    c.run('rm -f /home/lora/Documents/CSV_datei/testdaten.dat')
 
 @task(hosts=HOSTS)
 def logg(c):

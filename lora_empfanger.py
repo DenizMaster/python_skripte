@@ -21,10 +21,10 @@ import time
 import os
 import argparse
 
-parser = argparse.ArgumentParser(
-                    prog='ProgramName',
-                    description='What the program does',
-                    epilo='Text at the bottom of help')
+parser = argparse.ArgumentParser()
+                    #prog='ProgramName')#,
+                    #description='What the program does',
+                    #epilo='Text at the bottom of help')
 parser.add_argument('SF')
 parser.add_argument('BW')
 parser.add_argument('CR')
@@ -38,31 +38,33 @@ time_now_dateiname_str=time.strftime("%d-%m-%Y_%X")
 counter=0
 kopf_der_spalten=["Index","RSSI","SNR"]
 
-dateiname = "/home/lora/Documents/CSV_datei/testdaten.dat"
+dateiname = "testdaten.dat"
 
 
-time.sleep(1)
+time.sleep(0.1)
 
-datenbank = open(dateiname,mode='w',newline='\n')
 
+datenbank = open(dateiname,mode="w",newline="\n")
+datenbank.write("hallo;hallo \n")
 
 time.sleep(0.1)
 input_1=ser.write(b'reboot\n')
 print("sleep start")
-time.sleep(1)
+time.sleep(0.1)
 print("sleep end")
-time.sleep(0.5)
+time.sleep(0.1)
+datenbank.write("hallo;hallo \n")
 ser.write(b'sx1280 set sf '+args.SF.encode()+b'\n')
-time.sleep(0.5)
+time.sleep(0.1)
 ser.write(b'sx1280 set bw '+args.BW.encode()+b'\n')
-time.sleep(0.5)
+time.sleep(0.1)
 ser.write(b'sx1280 set cr '+args.CR.encode()+b'\n')
-time.sleep(0.5)
+time.sleep(0.1)
 ser.write(b'sx1280 set freq '+args.FREQ.encode()+b'\n')
-time.sleep(0.5)
+time.sleep(0.1)
 ser.write(b'sx1280 rx start\n')
-time.sleep(0.5)
-
+time.sleep(0.1)
+datenbank.write("hallo;hallo \n")
 while True:
     #print("while oben")
     if os.path.exists("/home/lora/Documents/CSV_datei/endesingnal.txt"):
@@ -78,10 +80,8 @@ while True:
     zeile=f"{time_now_timestamp};{outputt}"
     #csv.writer(datenbank).writerow(output)
     datenbank.write(zeile+"\n")
+   
 
-    #recl=os.system("ls ~/Documents/CSV_datei/endesingnal.txt")
-    
-    
 print("fertig")
-
+datenbank.close()
 ser.close()
